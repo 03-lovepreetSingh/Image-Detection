@@ -1,15 +1,17 @@
-Here’s the content converted to Markdown format:
+Here’s the content of the `README.md` for your project:
 
-```markdown
+---
+
 # Image Tampering Detection App
 
 This is a full-stack web application that allows users to upload an image and detects tampering or manipulative content. The backend is powered by Flask, while the frontend is built with Vite and React.
 
 ## Features
-- **Image Upload:** Users can upload an image via the frontend.
-- **Tampering Detection:** The backend analyzes the uploaded image for tampering and manipulative content.
-- **Detection Mask:** If tampering is detected, a mask showing the tampered areas is generated and returned.
-- **Fast Frontend:** The frontend is built with React and Vite for a fast development and build process.
+
+- **Image Upload**: Users can upload an image via the frontend.
+- **Tampering Detection**: The backend analyzes the uploaded image for tampering and manipulative content.
+- **Detection Mask**: If tampering is detected, a mask showing the tampered areas is generated and returned.
+- **Fast Frontend**: The frontend is built with React and Vite for a fast development and build process.
 
 ## Project Structure
 
@@ -17,8 +19,7 @@ This is a full-stack web application that allows users to upload an image and de
 .
 ├── backend               # Backend server powered by Flask
 │   ├── app.py            # Flask server entry point
-│   ├── gemini.py         # Image analysis 
-│   ├── tamper.py         # Tampering detection logic
+│   ├── main.py           # Image analysis and tampering detection logic
 │   └── uploads/          # Directory where uploaded images are saved
 ├── frontend              # Frontend powered by React and Vite
 │   ├── public/           # Static files for the frontend
@@ -29,85 +30,86 @@ This is a full-stack web application that allows users to upload an image and de
 ## Backend Setup (Flask)
 
 ### Prerequisites
+
 - Python 3.x
-- pip (Python package manager)
+- `pip` (Python package manager)
 
 ### Setup Instructions
 
-1. Clone the repository:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/image-tampering-detection.git
+   cd image-tampering-detection/backend
+   ```
 
-    ```bash
-    git clone https://github.com/03-lovepreetSingh/image-Detection
-    cd image-Detection/backend
-    ```
+2. **Create and activate a virtual environment** (optional but recommended):
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows, use venv\Scripts\activate
+   ```
 
-2. Create and activate a virtual environment (optional but recommended).
+3. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-3. Install dependencies:
-
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-4. Run the Flask server:
-
-    ```bash
-    python app.py
-    ```
-
-The server will run at `http://localhost:5000`.
+4. **Run the Flask server**:
+   ```bash
+   python app.py
+   ```
+   The server will run at `http://localhost:5000`.
 
 ## Frontend Setup (React + Vite)
 
 ### Prerequisites
+
 - Node.js (v14+)
 - npm or yarn
 
 ### Setup Instructions
 
-1. Navigate to the frontend folder:
+1. **Navigate to the frontend folder**:
+   ```bash
+   cd ../frontend
+   ```
 
-    ```bash
-    cd ../frontend
-    ```
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-2. Install dependencies:
-
-    ```bash
-    npm install
-    ```
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+   The frontend will run at `http://localhost:5173`.
 
 ## Running the Application
 
-1. Start the backend:
+1. **Start the backend**:
+   ```bash
+   cd backend
+   python app.py
+   ```
 
-    ```bash
-    cd backend
-    python app.py
-    ```
+2. **Start the frontend**:
+   ```bash
+   cd frontend
+   npm run dev
+   ```
 
-2. Start the frontend:
-
-    ```bash
-    cd frontend
-    npm run dev
-    ```
-
-Access the app by opening your browser and going to `http://localhost:5173`. You can upload an image, and the app will communicate with the Flask backend to analyze the image.
+3. **Access the app**:
+   Open your browser and go to `http://localhost:5173`. You can upload an image, and the app will communicate with the Flask backend to analyze the image.
 
 ## API Endpoint
 
-- **POST** `/analyze`:  
-  Expects a file upload (an image).
-  
-  Example request using curl:
-
+- **POST `/analyze`**: 
+  - Expects a file upload (an image).
+  - Example request using `curl`:
     ```bash
     curl -X POST -F "image=@path_to_image.jpg" http://localhost:5000/analyze
     ```
-
-  **Response:** JSON object with tampering analysis results:
-
+  - **Response**: JSON object with tampering analysis results:
     ```json
     {
       "analysis": "Deceptive content found",
@@ -122,12 +124,17 @@ Access the app by opening your browser and going to `http://localhost:5173`. You
 - Support for multiple image formats and larger image sizes.
 - Frontend improvements, including better error handling and user feedback.
 
-## License
+---
+
+### License
 
 This project is licensed under the MIT License.
 
-## Contributing
+---
+
+### Contributing
 
 Feel free to submit a pull request or open an issue if you'd like to contribute.
-```
+
+---
 
